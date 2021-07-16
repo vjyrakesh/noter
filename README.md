@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Noter
+- Users should be able to take notes.
+- Display notes of a user in a grid format.
+- Ability to edit the notes in place.
+- Delete the notes.
+- Add category to notes.
