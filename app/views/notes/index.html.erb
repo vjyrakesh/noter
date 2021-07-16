@@ -3,20 +3,23 @@
 <h1>Notes</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  
 
   <tbody>
     <% @notes.each do |note| %>
       <tr>
-        <td><%= note.content %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= note.content %>
+          <p><%= note.categories.join(",") %></p>
+          <p>Last updated on <%= note.updated_at.in_time_zone("Chennai").strftime("%Y-%m-%d at %l:%M %p")%></p>
+        </td>
+        <td class="actions">
+          <ul>
+            <li><%= link_to 'Show', note %></li>
+            <li><%= link_to 'Edit', edit_note_path(note) %></li>
+            <li><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </td>
       </tr>
     <% end %>
   </tbody>
