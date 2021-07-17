@@ -13,6 +13,7 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+    @categories = Category.all
   end
 
   # GET /notes/1/edit
@@ -22,10 +23,12 @@ class NotesController < ApplicationController
   # POST /notes or /notes.json
   def create
     @note = Note.new(note_params)
+    @category = Category.find(params[:category][:category_id])
+    @note.categories << @category
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: "Note was successfully created." }
+        format.html { redirect_to notes_url, notice: "Note was successfully created." }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,9 +39,10 @@ class NotesController < ApplicationController
 
   # PATCH/PUT /notes/1 or /notes/1.json
   def update
+    
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: "Note was successfully updated." }
+        format.html { redirect_to notes_url, notice: "Note was successfully updated." }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit, status: :unprocessable_entity }

@@ -1,4 +1,8 @@
-<h1>New Note</h1>
+<%if notice %>
+    <p><%= notice %></p>
+<% end %>
+
+<h1>Add a new note</h1>
 
 <%= render 'form', note: @note %>
 

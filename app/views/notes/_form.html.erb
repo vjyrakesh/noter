@@ -14,9 +14,15 @@
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content %>
+    
   </div>
-
-  <div class="actions">
+  <div>
+    <%= select("category", "category_id", Category.all.collect {|c| [c.name, c.id]}, {selected: nil, prompt:'Select a category'}) %>
+  </div>
+  <p>
+    <div class="actions">
     <%= form.submit %>
   </div>
+  </p>
+  
 <% end %>
