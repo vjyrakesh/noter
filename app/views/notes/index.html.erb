@@ -1,29 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Notes</h1>
+<h1 class="heading">Notes</h1>
 
-<table>
-  
 
-  <tbody>
     <% @notes.each do |note| %>
-      <tr>
-        <td>
-          <%= note.content %>
-          <p><%= note.categories.join(",") %></p>
-          <p>Last updated on <%= note.updated_at.in_time_zone("Chennai").strftime("%Y-%m-%d at %l:%M %p")%></p>
-        </td>
-        <td class="actions">
-          <ul>
+    <a href="<%= note_url(note.id)%>" class="note-link">
+      <div class="note">
+        <div class="note-details">
+          <p><%= note.content %></p>
+          Categories: <%= note.categories.join(",") %><br>
+          Last updated on <%= note.updated_at.in_time_zone("Chennai").strftime("%Y-%m-%d at %l:%M %p")%>
+        </div>
+          <ul class="note-actions">
             <li><%= link_to 'Show', note %></li>
             <li><%= link_to 'Edit', edit_note_path(note) %></li>
             <li><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
-        </td>
-      </tr>
+        
+      </div>
+    </a>
     <% end %>
-  </tbody>
-</table>
+  
 
 <br>
 
