@@ -23,9 +23,7 @@ class NotesController < ApplicationController
   # POST /notes or /notes.json
   def create
     @note = Note.new(note_params)
-    @category = Category.find(params[:category][:category_id])
-    @note.categories << @category
-
+    
     respond_to do |format|
       if @note.save
         format.html { redirect_to notes_url, notice: "Note was successfully created." }
@@ -39,7 +37,6 @@ class NotesController < ApplicationController
 
   # PATCH/PUT /notes/1 or /notes/1.json
   def update
-    
     respond_to do |format|
       if @note.update(note_params)
         format.html { redirect_to notes_url, notice: "Note was successfully updated." }
@@ -68,6 +65,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:content)
+      params.require(:note).permit(:content, category_ids:[])
     end
 end
