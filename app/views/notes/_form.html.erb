@@ -1,4 +1,5 @@
-<%= form_with(model: note) do |form| %>
+<div class="form-div">
+  <%= form_with(model: note, class:"note-form") do |form| %>
   <% if note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -11,18 +12,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="note-form-field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, rows:20, cols:80 %>
     
   </div>
-  <div>
-    <%= select("note", "category_ids", Category.all.collect {|c| [c.name, c.id]}, { include_hidden:false},{multiple:true}) %>
+  <div class="note-form-field">
+    <%= form.label "Categories"%>
+    <%= select("note", "category_ids", Category.all.collect {|c| [c.name, c.id]}, { include_hidden:false},{multiple:true, class:"note-category-select"}) %>
   </div>
-  <p>
-    <div class="actions">
-    <%= form.submit %>
+    <div class="actions note-form-field">
+    <%= form.submit class:"btn-submit" %>
+    <%= link_to 'Back', notes_path %>
   </div>
-  </p>
   
 <% end %>
+</div>
+
