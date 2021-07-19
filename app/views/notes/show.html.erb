@@ -1,9 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%if notice%>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
-<p>
-  <strong>Content:</strong>
-  <%= @note.content %>
-</p>
+<div class="show-note">
+    <div class="show-note-detail">
+      <%= @note.content %>
+    </div>
+    
+    
+    <div class="show-note-actions">
+      <%= link_to 'Edit', edit_note_path(@note) %> |
+      <%= link_to 'Back', notes_path %>
+    </div>
+    
+  
+</div>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+

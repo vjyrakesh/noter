@@ -84,4 +84,21 @@
         border-style: none;
         font-size: medium;
     }
+
+    .show-note {
+        width: 40%;
+        margin-left:auto;
+        margin-right: auto;
+        border: 1px solid coral;
+        border-radius: 5px;
+    }
+    .show-note-actions {
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+    }
+
+    .show-note-detail {
+        margin: 10px;
+    }
 }
