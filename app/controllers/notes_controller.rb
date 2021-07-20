@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show edit update destroy ]
+  before_action :set_categories, only: %i[index new]
 
   # GET /notes or /notes.json
   def index
@@ -13,7 +14,6 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-    @categories = Category.all
   end
 
   # GET /notes/1/edit
@@ -66,5 +66,9 @@ class NotesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def note_params
       params.require(:note).permit(:title, :content, category_ids:[])
+    end
+
+    def set_categories
+      @categories = Category.all
     end
 end

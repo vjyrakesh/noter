@@ -6,15 +6,11 @@
   </div>
   <div class="note-list-container">
     <div class="cat-list-container">
+      <p><u>Categories</u></p>
       <ul class="cat-list">
-        <li>work</li>
-        <li>work</li>
-        <li>work</li>
-        <li>work</li>
-        <li>work</li>
-        <li>work</li>
-        <li>work</li>
-        <li>work</li>
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, category_url(category.id) %></li>
+        <% end %>
       </ul>
     </div>
     <div class="notes-container">
