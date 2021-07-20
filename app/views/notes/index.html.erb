@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="heading">Notes</h1>
-
+    <div class="new-note-link">
+      <%= link_to 'New Note', new_note_path %>
+    </div>
     <div class="notes-container">
+      
       <% @notes.each do |note| %>
       <div class="one-note">
         <a href="<%= note_url(note.id)%>" class="note-link">
@@ -34,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Note', new_note_path %>
+
