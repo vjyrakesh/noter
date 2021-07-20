@@ -4,6 +4,11 @@
 
 <div class="show-note">
     <div class="show-note-detail">
+      <div class="show-note-title">
+        <% if @note.title %>
+          <%=@note.title%>
+        <% end %>
+      </div>
       <%= @note.content %>
     </div>
     

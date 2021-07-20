@@ -13,9 +13,12 @@
   <% end %>
 
   <div class="note-form-field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="note-form-field">
     <%= form.label :content %>
     <%= form.text_area :content, rows:20, cols:80 %>
-    
   </div>
   <div class="note-form-field">
     <%= form.label "Categories"%>
