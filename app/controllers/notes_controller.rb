@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show edit update destroy ]
-  before_action :set_categories, only: %i[index new]
+  include CategoryList
+  before_action :set_category_list
 
   # GET /notes or /notes.json
   def index
@@ -68,7 +69,4 @@ class NotesController < ApplicationController
       params.require(:note).permit(:title, :content, category_ids:[])
     end
 
-    def set_categories
-      @categories = Category.all
-    end
 end
