@@ -141,16 +141,17 @@
         float: left;
         padding: 10px;
         border-radius: 5px;
-        width: 90px;
+        width: auto;
         ul {
             text-align: left;
             list-style-type: none;
             padding: 5px;
 
-            a {
-                text-decoration: none;
-                color: dodgerblue;
-            }
+            
+        }
+        a {
+            text-decoration: none;
+            color: dodgerblue;
         }
     }
 }

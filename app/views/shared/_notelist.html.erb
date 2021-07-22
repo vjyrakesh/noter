@@ -1,13 +1,16 @@
 <div class="note-list-container">
     <div class="cat-list-container">
-      <p><u>Categories</u></p>
+      <p style="color:tomato;"><strong>Categories</strong></p>
       <ul class="cat-list">
         <% @categories.each do |category| %>
           <li><%= link_to category.name, category_url(category.id) %></li>
         <% end %>
+          
       </ul>
+      <%= link_to "New Category", new_category_url %>
     </div>
     <div class="notes-container">
+      
       <% @notes.each do |note| %>
       <div class="one-note">
         <a href="<%= note_url(note.id)%>" class="note-link">
@@ -25,7 +28,7 @@
               <ul class="note-actions">
                 <li><%= link_to 'Show', note %></li>
                 <li><%= link_to 'Edit', edit_note_path(note) %></li>
-                <li><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                <li><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
               </ul>
             
           </div>
