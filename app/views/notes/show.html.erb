@@ -9,7 +9,8 @@
           <%=@note.title%>
         <% end %>
       </div>
-      <%= @note.content %>
+      <p><%= @note.content %></p>
+      Categories: <%= @note.categories.join(",") %><br>
     </div>
     
     
