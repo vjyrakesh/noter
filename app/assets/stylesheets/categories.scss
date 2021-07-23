@@ -18,7 +18,7 @@
         border-width: 1px 1px 1px 5px;
         border-color: darkgray darkgray darkgray coral;
         border-radius: 5px;
-        
+        box-shadow: 2px 2px #DDDDDD;
         margin-bottom: 10px;
         // width: 35%;
         div.note-details {
@@ -55,37 +55,6 @@
     .heading {
         color: tomato;
         text-align: center;
-    }
-
-    .note-form {
-        margin: 10px;
-        
-    }
-
-    .form-div {
-        display: flex;
-        justify-content: center;
-    }
-
-    .note-form-field {
-        margin: 5px;
-        font-size: medium;
-    }
-
-    .note-category-select {
-        margin-top: 5px;
-        width: 20%;
-        font-size: medium;
-    }
-
-    .btn-submit {
-        width: auto;
-        height: 30px;
-        background-color: dodgerblue;
-        color: white;
-        border-radius: 4px;
-        border-style: none;
-        font-size: medium;
     }
 
     .show-note {
@@ -135,26 +104,6 @@
             :hover {
                 background-color: dodgerblue;
             }
-        }
-    }
-    .cat-list-container {
-        margin-right: 20px;
-        //display: inline-block;
-        border: 1px solid darkgray;
-        float: left;
-        padding: 10px;
-        border-radius: 5px;
-        width: auto;
-        ul {
-            text-align: left;
-            list-style-type: none;
-            padding: 5px;
-
-            
-        }
-        a {
-            text-decoration: none;
-            color: dodgerblue;
         }
     }
     .no-notes-div {
