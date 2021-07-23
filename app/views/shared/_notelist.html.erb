@@ -17,9 +17,9 @@
               Last updated on <%= note.updated_at.in_time_zone("Chennai").strftime("%Y-%m-%d at %l:%M %p")%>
             </div>
               <ul class="note-actions">
-                <li><%= link_to 'Show', note %></li>
-                <li><%= link_to 'Edit', edit_note_path(note) %></li>
-                <li><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                <li><%= link_to '', note, class:'far fa-eye' %></li>
+                <li><%= link_to '', edit_note_path(note), class: 'far fa-edit' %></li>
+                <li><%= link_to '', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-trash' %></li>
               </ul>
             
           </div>
