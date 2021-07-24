@@ -51,4 +51,19 @@ body {
     font-family: 'Segoe UI', Verdana, sans-serif;
 }
 
+.search-notes {
+    margin-left: auto;
+    width: 22%;
+    input {
+        font-size: medium;
+    }
+    .btn-search {
+        background-color: coral;
+        color: white;
+        border-radius: 5px;
+        border-style: none;
+        padding: 3px;
+    }
+}
+
  

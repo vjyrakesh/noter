@@ -16,6 +16,12 @@
       <div class="header-div">
         <%= link_to "Noter", notes_url%>
       </div>
+      <div class="search-notes">
+          <%= form_tag notes_path, method: :get do %>
+            <%= search_field_tag :query, params[:query] %>
+            <%= submit_tag 'Search', class: "btn-search" %>
+          <% end %>
+      </div>
     </header>
     <main class='<%= controller.controller_name %>'>
       <div class="cat-list-container">

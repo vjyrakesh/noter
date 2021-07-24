@@ -5,7 +5,9 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = Note.all
+    # puts params[:query]
+    # @notes = Note.all
+    @notes = Note.search(params[:query])
   end
 
   # GET /notes/1 or /notes/1.json
@@ -66,7 +68,7 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :content, category_ids:[])
+      params.require(:note).permit(:title, :content, :query, category_ids:[])
     end
 
 end
