@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'admin' => 'admin#index'
+  get 'forbidden' => 'admin#forbidden'
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
   resources :users
   resources :categories
   resources :notes
