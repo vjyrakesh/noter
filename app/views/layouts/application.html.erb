@@ -27,10 +27,11 @@
       <div class="cat-list-container">
         <p style="color:tomato;"><strong>Categories</strong></p>
         <ul class="cat-list">
-          <% @categories.each do |category| %>
-            <li><%= link_to category.name, category_url(category.id) %></li>
+          <% if @categories %>
+            <% @categories.each do |category| %>
+              <li><%= link_to category.name, category_url(category.id) %></li>
+            <% end %>
           <% end %>
-            
         </ul>
         <%= link_to "New Category", new_category_url %>
       </div>
