@@ -7,7 +7,8 @@ class NotesController < ApplicationController
   def index
     # puts params[:query]
     # @notes = Note.all
-    @notes = Note.search(params[:query])
+    @notes = Note.search(params[:query], session[:user_id])
+     
   end
 
   # GET /notes/1 or /notes/1.json
@@ -26,7 +27,7 @@ class NotesController < ApplicationController
   # POST /notes or /notes.json
   def create
     @note = Note.new(note_params)
-    
+    @note.user = User.find_by(id: session[:user_id])
     respond_to do |format|
       if @note.save
         format.html { redirect_to notes_url, notice: "Note was successfully created." }

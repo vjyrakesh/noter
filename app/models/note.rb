@@ -1,12 +1,13 @@
 class Note < ApplicationRecord
     has_and_belongs_to_many :categories
     validates :content, presence: true
+    belongs_to :user
 
-    def self.search(query)
+    def self.search(query, user_id)
         if query
-            Note.where("content LIKE '%#{query}%'")
+            User.find_by(id: user_id).notes.where("content LIKE '%#{query}%'")
         else
-            Note.all
+            User.find_by(id: user_id).notes
         end
     end
 end
