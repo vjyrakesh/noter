@@ -3,18 +3,13 @@
   <aside><%= flash[:alert]%></aside>
 <% end %>
 
-<%= form_tag do %>
-  <h1>Login to Noter</h1>
-  <div>
-    <%= label_tag :username, "Username" %>
-    <%= text_field_tag :username, params[:username] %>
-  </div>
-  <div>
-    <%= label_tag :password, "Password" %>
-    <%= password_field_tag :password, params[:password] %>
-  </div>
-  <div>
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
+<div class="login-form-div">
+  <h2 class="form-title">Login to Noter</h1>
+  <%= form_tag do %>
+    <%= text_field_tag :username, params[:username], placeholder:'Username' %>
+    <%= password_field_tag :password, params[:password], placeholder:'Password' %>
+    <%= submit_tag "Login",class:"submit-btn" %>
+  <% end %>
+</div>
+
 
