@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize
   def new
+    render layout: "plain"
   end
 
   def create
@@ -24,6 +25,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_url, alert: "You have successfully logged out"
+    redirect_to login_url, alert: "Logged out"
   end
 end
