@@ -12,16 +12,14 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-div">
+    <header >
+      <div class="header-div-plain">
         <%= link_to "Noter", notes_url%>
-        
       </div>
-      
+        
     </header>
     <main class='<%= controller.controller_name %>'>
       <%= yield %>
     </main>
-    
   </body>
 </html>

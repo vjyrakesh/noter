@@ -2,62 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.login-form-div {
-    // border: 1px solid coral;
-    width: 20%;
-    min-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    height: max-content;
-    border-radius: 5px;
-    box-shadow: 0 5px 8px #ccc,0 5px 8px #ccc;
-    margin-top: 40px;
-    form {
-        margin: 10px;
-        padding: 10px;
-
-        input {
-            font-family: sans-serif;
-            font-size: medium;
-            padding: 12px 20px;
-            border-radius: 5px;
-            border: 1px solid #aaa;
-            width: 100%;
-            display: inline-block;
-            margin: 8px 0px;
-            margin-left: auto;
-            margin-right: auto;
-            box-sizing: border-box;
-        }
-
-        input[type=submit] {
-            background-color: coral;
-            color: white;
-            padding: 5px 10px 5px 10px;
-            border-style: none;
-            border-radius: 5px;
-            height: 30px;
-            width: 100%;
-            text-align: center;
-            cursor: pointer;
+.header-div-plain {
+    // border: 1px solid black;
+    padding: 15px;
+    // height: 60px;
+    
+    a {
+        color: tomato;
+        font-size: xx-large;
+        text-decoration: none;
+        font-weight: bold;
+        // float: left;
+        display: inline-block;
+        box-sizing: border-box;
+   }
+}
+.sessions {
+    .login-form-div {
+        border: 1px solid coral;
+        width: 20%;
+        min-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        height: max-content;
+        border-radius: 5px;
+        box-shadow: 0 5px 8px #ccc,0 5px 8px #ccc;
+        margin-top: 40px;
+        // position: absolute;
+        form {
+            margin: 10px;
+            padding: 10px;
+    
+            input {
+                font-family: sans-serif;
+                font-size: medium;
+                padding: 12px 20px;
+                border-radius: 5px;
+                border: 1px solid #aaa;
+                width: 100%;
+                display: inline-block;
+                margin: 8px 0px;
+                margin-left: auto;
+                margin-right: auto;
+                box-sizing: border-box;
+            }
+    
+            input[type=submit] {
+                background-color: coral;
+                color: white;
+                padding: 5px 10px 5px 10px;
+                border-style: none;
+                border-radius: 5px;
+                height: 30px;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                
+            }
+    
+            .username {
+                margin-top: 30px;
+            }
             
         }
-
-        .username {
-            margin-top: 30px;
+        .form-title {
+            margin: 10px;
+            padding-top: 20px;
+            color: tomato;
+            text-align: center;
+            
+        }
+        .flash {
+            text-align: center;
         }
         
-    }
-    .form-title {
-        margin: 10px;
-        padding-top: 20px;
-        color: tomato;
-        text-align: center;
         
     }
-    .flash {
-        text-align: center;
-    }
-    
-    
 }
+
