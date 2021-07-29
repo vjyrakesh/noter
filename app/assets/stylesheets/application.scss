@@ -16,7 +16,7 @@
 
  .header-div {
     position: relative;
-     
+    padding: 5px;
      a {
          color: tomato;
          font-size: xx-large;
@@ -32,6 +32,7 @@
             font-size: medium;
             font-weight: normal;
             font-family: sans-serif;
+            margin-left: 10px;
          }
          
     }
@@ -59,13 +60,11 @@
 
  .cat-list-container {
     margin-right: 20px;
-    //display: inline-block;
     border: 1px solid darkgray;
     float: left;
     padding: 10px;
     border-radius: 5px;
     width: auto;
-    margin-top: 80px;
     box-shadow: 2px 2px #DDDDDD;
     ul {
         text-align: left;
@@ -80,6 +79,9 @@
 
 body {
     font-family: 'Segoe UI', Verdana, sans-serif;
+}
+.main-container {
+    margin-top: 20px;
 }
 
 

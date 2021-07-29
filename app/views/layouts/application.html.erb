@@ -22,24 +22,28 @@
           <% end %>
         </div>
         <div class="logout-div">
+          <%= link_to 'New Note', new_note_path %>
           <%= link_to "Logout", logout_path, method: :delete %>
         </div>
       </div>
       
     </header>
     <main class='<%= controller.controller_name %>'>
-      <div class="cat-list-container">
-        <p style="color:tomato;"><strong>Categories</strong></p>
-        <ul class="cat-list">
-          <% if @categories %>
-            <% @categories.each do |category| %>
-              <li><%= link_to category.name, category_url(category.id) %></li>
+      <div class="main-container">
+        <div class="cat-list-container">
+          <p style="color:tomato;"><strong>Categories</strong></p>
+          <ul class="cat-list">
+            <% if @categories %>
+              <% @categories.each do |category| %>
+                <li><%= link_to category.name, category_url(category.id) %></li>
+              <% end %>
             <% end %>
-          <% end %>
-        </ul>
-        <%= link_to "New Category", new_category_url %>
+          </ul>
+          <%= link_to "New Category", new_category_url %>
+        </div>
+        <%= yield %>
       </div>
-      <%= yield %>
+      
     </main>
     
   </body>

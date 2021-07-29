@@ -1,34 +1,34 @@
 <div class="form-div">
   <%= form_with(model: note, class:"note-form") do |form| %>
-  <% if note.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+    <% if note.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
 
-      <ul>
-        <% note.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% note.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="note-form-field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
     </div>
-  <% end %>
-
-  <div class="note-form-field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="note-form-field">
-    <%= form.label :content %>
-    <%= form.text_area :content, rows:20, cols:80 %>
-  </div>
-  <div class="note-form-field">
-    <%= form.label "Categories"%>
-    <%= select("note", "category_ids", Category.all.collect {|c| [c.name, c.id]}, { include_hidden:false},{multiple:true, class:"note-category-select"}) %>
-  </div>
+    <div class="note-form-field">
+      <%= form.label :content %>
+      <%= form.text_area :content, rows:20, cols:80 %>
+    </div>
+    <div class="note-form-field">
+      <%= form.label "Categories"%>
+      <%= select("note", "category_ids", Category.all.collect {|c| [c.name, c.id]}, { include_hidden:false},{multiple:true, class:"note-category-select"}) %>
+    </div>
     <div class="actions note-form-field">
-    <%= form.submit class:"btn-submit" %>
-    <%= link_to 'Back', notes_path %>
-  </div>
+      <%= form.submit class:"btn-submit" %>
+      <%= link_to 'Back', notes_path %>
+    </div>
   
-<% end %>
+  <% end %>
 </div>
 

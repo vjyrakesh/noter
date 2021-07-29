@@ -91,6 +91,15 @@
         margin-right: auto;
         border: 1px solid coral;
         border-radius: 5px;
+        .show-note-detail {
+            margin: 10px;
+        }
+    
+        .show-note-title {
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
     }
     .show-note-actions {
         margin-left: auto;
@@ -98,22 +107,14 @@
         width: 20%;
     }
 
-    .show-note-detail {
-        margin: 10px;
-    }
-
-    .show-note-title {
-        text-align: center;
-        font-size: large;
-        font-weight: bold;
-    }
+    
 
     .new-note-link {
-        
-        //position: static;
-        //margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 20px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        // margin-left: auto;
+        // margin-bottom: 20px;
         width: 80px;
         background-color: dodgerblue;
         border-radius: 5px;

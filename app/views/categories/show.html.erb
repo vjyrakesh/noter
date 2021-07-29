@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
   <h1 class="heading">Notes in <%= @category.name %></h1>
-  <div class="new-note-link">
-    <%= link_to 'New Note', new_note_path %>
-  </div>
+  
   <% if @notes.size == 0 %>
         <div class="no-notes-div">
           <p>No notes to show in <%= @category.name %></p>
