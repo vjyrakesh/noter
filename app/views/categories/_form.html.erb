@@ -11,15 +11,14 @@
         </ul>
       </div>
     <% end %>
-
-    <div class="note-form-field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+    <h1 class="heading">Add new Category</h1>
+    <div class="field">
+      <%= form.text_field :name, placeholder: "New category" %>
     </div>
 
     <div class="actions">
       <%= form.submit class:"btn-submit"%>
-      <%= link_to 'Back', categories_path %>
+      <%= link_to 'Back', notes_path %>
     </div>
   <% end %>
 </div>

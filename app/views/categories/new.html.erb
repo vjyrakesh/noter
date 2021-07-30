@@ -1,4 +1,8 @@
-<h1 class="heading">Add new Category</h1>
+<%if notice %>
+    <p><%= notice %></p>
+<% end %>
+
+
 
 <%= render 'form', category: @category %>
 
