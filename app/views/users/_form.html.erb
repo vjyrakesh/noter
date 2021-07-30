@@ -1,42 +1,40 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="form-div">
+  <%= form_with(model: user) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h1>Create an account</h1>
+    <div class="field">
+      <%= form.text_field :username, placeholder: "Username" %>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password, placeholder: "Password" %>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :first_name, placeholder: "First Name" %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :last_name, placeholder: "Last Name" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Create Account" %>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Confirm your password" %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

@@ -7,6 +7,7 @@
     <%= text_field_tag :username, params[:username], placeholder:'Username' %>
     <%= password_field_tag :password, params[:password], placeholder:'Password' %>
     <%= submit_tag "Login",class:"submit-btn" %>
+    <%= link_to "Create an account", new_user_path %>
   <% end %>
 </div>
 

@@ -1,3 +1,54 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.users {
+    .form-div {
+        border: 1px solid coral;
+        border-radius: 5px;
+        box-shadow: 0 5px 8px #ccc,0 5px 8px #ccc;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+
+        h1 {
+            color: tomato;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: normal;
+            margin-bottom: 60px;
+        }
+
+        .field {
+            margin-right: auto;
+            margin-left: auto;
+            width: 70%;
+        
+            input {
+                padding: 8px 10px;
+                border-radius: 5px;
+                border: 1px solid #aaa;
+                width: 100%;
+                box-sizing: border-box;
+                font-size: medium;
+            }
+        }
+
+        .actions {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            input[type=submit] {
+                background-color: mediumseagreen;
+                color: white;
+                padding: 6px 10px;
+                border-style: none;
+                border-radius: 5px;
+                cursor: pointer;
+                height: 35px;
+                font-size: medium;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+}
