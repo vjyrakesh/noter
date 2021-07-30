@@ -2,6 +2,9 @@ class AdminController < ApplicationController
   before_action :check_role, only: :index
   def index
     @total_notes_count = Note.count
+    @total_users_count = User.count
+    @total_categories_count = Category.count
+    render layout: "admin"
   end
 
   def forbidden
