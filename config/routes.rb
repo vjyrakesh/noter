@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
+    get 'forgot' => :forgot
+    patch 'forgot' => :update_password
   end
   resources :users
   resources :categories

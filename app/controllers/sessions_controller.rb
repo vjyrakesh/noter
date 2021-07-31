@@ -27,4 +27,21 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to login_url, alert: "Logged out"
   end
+
+  def forgot
+    render layout: "plain"
+  end
+
+  def update_password
+    username = params[:username]
+    user = User.find_by(username: username)
+    if user
+      user.password = params[:password]
+      if user.save
+        redirect_to login_url, alert: "Password updated"
+      end
+    else
+      redirect_to login_url, alert: "Incorrect username"
+    end
+  end
 end
