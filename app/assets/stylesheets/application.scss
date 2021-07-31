@@ -27,13 +27,44 @@
     .logout-div {
         position: absolute;
         top: 3px;
-        right: 0;
-         a {
+        right: 10px;
+        a {
             font-size: medium;
             font-weight: normal;
             font-family: sans-serif;
             margin-left: 10px;
-         }
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 130px;
+            z-index: 1;
+            right: 1px;
+            margin-top: 1px;
+            box-shadow: 2px 2px 5px #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+                a {
+                    text-decoration: none;
+                    display: block;
+                    padding: 4px;
+                    text-align: left;
+                    margin-left: 0;
+                    font-size: 1.02em;
+                    // border: 1px solid black;
+                }
+            
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
          
     }
     .search-notes {

@@ -23,7 +23,16 @@
         </div>
         <div class="logout-div">
           <%= link_to 'New Note', new_note_path %>
-          <%= link_to "Logout", logout_path, method: :delete %>
+          <div class="dropdown">
+            <span class="dropbtn">User</span>
+            <div class="dropdown-content">
+              
+                <%= link_to "Update password", forgot_path %>
+                <%= link_to "Logout", logout_path, method: :delete %>
+              
+            </div>
+          </div>
+          
         </div>
       </div>
       
