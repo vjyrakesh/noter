@@ -24,7 +24,7 @@
         <div class="logout-div">
           <%= link_to 'New Note', new_note_path %>
           <div class="dropdown">
-            <span class="dropbtn">User</span>
+            <span class="dropbtn"><%= session[:user_name] %></span>
             <div class="dropdown-content">
               
                 <%= link_to "Update password", forgot_path %>
