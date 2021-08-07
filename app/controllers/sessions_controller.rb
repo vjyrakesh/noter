@@ -6,21 +6,21 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:username])
-    puts user.username
-    puts user.password_digest
-    puts user.role
-    if user.try(:authenticate, params[:password])
-      puts "user authenticated"
-      session[:user_id] = user.id
-      session[:user_name] = user.username
-      if user.role == 'admin'
-        redirect_to admin_url
+    if user
+      if user.try(:authenticate, params[:password])
+        puts "user authenticated"
+        session[:user_id] = user.id
+        session[:user_name] = user.username
+        if user.role == 'admin'
+          redirect_to admin_url
+        else
+          redirect_to notes_url
+        end
       else
-        redirect_to notes_url
+        redirect_to login_url, alert: "Incorrect username/password combination"
       end
     else
-      puts "user not authenticated"
-      redirect_to login_url, alert: "Incorrect username/password combination"
+      redirect_to login_url, alert: "User does not exist"
     end
   end
 
