@@ -14,14 +14,17 @@ RSpec.describe Note, type: :model do
   end
 
   context ".search" do 
+    let(:user1) {
+      User.create(username: "dummy", password: "dummy")
+    }
     it "returns the note containing search query" do
-      user1 = User.create(username:"dummy",password:"dummy")
+      # user1 = User.create(username:"dummy",password:"dummy")
       note1 = Note.create(content: "first note", user: user1)
       expect(Note.search("first", user1.id).first.content).to eq("first note")
     end
 
     it "returns atleast 1 note for valid search query" do
-      user1 = User.create(username:"dummy",password:"dummy")
+      # user1 = User.create(username:"dummy",password:"dummy")
       note1 = Note.create(content: "first note", user: user1)
       expect(Note.search("first", user1.id).count).to eq(1)
     end
