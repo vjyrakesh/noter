@@ -1,0 +1,4 @@
+var categories = document.querySelector("#categories")
+categories.insertAdjacentHTML("beforeend", "<%= j render(@category) %>")
+var cat_txt = document.getElementById("category_name")
+cat_txt.value=""

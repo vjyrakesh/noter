@@ -27,8 +27,9 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to notes_url, notice: "Category was successfully created." }
+        format.html { redirect_to notes_url }
         format.json { render :show, status: :created, location: @category }
+        format.js
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @category.errors, status: :unprocessable_entity }

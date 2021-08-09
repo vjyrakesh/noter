@@ -8,7 +8,7 @@ class NotesController < ApplicationController
     # puts params[:query]
     # @notes = Note.all
     @notes = Note.search(params[:query], session[:user_id])
-     
+    @category = Category.new 
   end
 
   # GET /notes/1 or /notes/1.json
